@@ -66,9 +66,9 @@ called with an instance. With this approach, you can never access the
 instance variables. Ouch!
 
 Alternatively, ``either`` could have been designated a ``@staticmethod``,
-had its ``receiver`` variable been removed. Then it would be callable
-from either an instance or a class. But in neither case would it pass the
-object the method was called from, so there'd never be a way to access
+had its ``receiver`` parameter been removed. But while it would then be
+callable from either an instance or a class, in neither case would it pass
+the object the method was called from. There'd never be a way to access
 either the class or instance variables. Double ouch!
 
 So as useful as ``@classmethod`` and ``@staticmethod`` are, they don't
