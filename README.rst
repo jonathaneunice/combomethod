@@ -106,6 +106,9 @@ Notes
   `Stack Overflow post <http://stackoverflow.com/questions/2589690/creating-a-method-that-is-simultaneously-an-instance-and-class-method>`_.
   Thank you, Mike!
 
+* While the module is new to separate PyPI distribution, I've
+  successfuly used it in production code for several years.
+
 * Automated multi-version testing managed with
   `pytest <http://pypi.python.org/pypi/pytest>`_,
   `pytest-cov <http://pypi.python.org/pypi/pytest-cov>`_,
