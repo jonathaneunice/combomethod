@@ -69,9 +69,9 @@ Alternatively, ``either`` could have been designated a ``@staticmethod``,
 had its ``receiver`` parameter been removed. But while it would then be
 callable from either an instance or a class, in neither case would it pass
 the object the method was called from. There'd never be a way to access
-either the class or instance variables. Double ouch!
+either the class or instance variables. Ouch again!
 
-So as useful as ``@classmethod`` and ``@staticmethod`` are, they don't
+As useful as ``@classmethod`` and ``@staticmethod`` are, they don't
 handle the important case where you need to call with either the class or
 an instance *and* you need genuine access to the object doing the call.
 Here's an example that needs this::
@@ -118,7 +118,7 @@ Notes
   with `Travis-CI <https://travis-ci.org/jonathaneunice/combomethod>`_.
   Packaging linting with `pyroma <https://pypi.python.org/pypi/pyroma>`_.
 
-  Successfully packaged for, and tested against, all late-model
+* Successfully packaged for, and tested against, all late-model
   versions of Python: 2.6, 2.7, 3.2, 3.3,
   3.4, and 3.5 pre-release (3.5.0b3) as well as PyPy 2.6.0 (based on
   2.7.9) and PyPy3 2.4.0 (based on 3.2.5).
