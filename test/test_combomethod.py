@@ -15,10 +15,9 @@ def test_basic():
         def either(receiver, x, y):
             return x + y
 
-    assert A.either(1, 3) == 4
-
     a = A()
     assert a.either(1, 3) == 4
+    assert A.either(1, 3) == 4
 
 
 def test_expected_receiver():
