@@ -1,0 +1,12 @@
+
+-
+    version: 1.0.0
+    date: August 30, 2015
+    notes: >
+        Split off from ``options`` module, where it has long been used
+        in production code.
+        
+        First version as a separate package.
+        
+        Added docs, bespoke testing, and packaging.
+

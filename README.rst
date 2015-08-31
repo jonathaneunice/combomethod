@@ -1,0 +1,147 @@
+
+| |travisci| |version| |downloads| |versions| |impls| |wheel| |coverage| |br-coverage|
+
+.. |travisci| image:: https://api.travis-ci.org/jonathaneunice/combomethod.svg
+    :target: http://travis-ci.org/jonathaneunice/combomethod
+
+.. |version| image:: http://img.shields.io/pypi/v/combomethod.svg?style=flat
+    :alt: PyPI Package latest release
+    :target: https://pypi.python.org/pypi/combomethod
+
+.. |downloads| image:: http://img.shields.io/pypi/dm/combomethod.svg?style=flat
+    :alt: PyPI Package monthly downloads
+    :target: https://pypi.python.org/pypi/combomethod
+
+.. |versions| image:: https://img.shields.io/pypi/pyversions/combomethod.svg
+    :alt: Supported versions
+    :target: https://pypi.python.org/pypi/combomethod
+
+.. |impls| image:: https://img.shields.io/pypi/implementation/combomethod.svg
+    :alt: Supported implementations
+    :target: https://pypi.python.org/pypi/combomethod
+
+.. |wheel| image:: https://img.shields.io/pypi/wheel/combomethod.svg
+    :alt: Wheel packaging support
+    :target: https://pypi.python.org/pypi/combomethod
+
+.. |coverage| image:: https://img.shields.io/badge/test_coverage-100%25-6600CC.svg
+    :alt: Test line coverage
+    :target: https://pypi.python.org/pypi/combomethod
+
+.. |br-coverage| image:: https://img.shields.io/badge/branch_coverage-100%25-6600CC.svg
+    :alt: Test branch coverage
+    :target: https://pypi.python.org/pypi/combomethod
+
+Python has instance methods, class methods (``@classmethod``), and
+static methods (``@staticmethod``). But it doesn't have a clear way
+to invoke a method on either a class *or*
+its instances. With ``combomethod``, it does.::
+
+    from combomethod import combomethod
+
+    class A(object):
+
+        base = 10
+
+        def __init__(self, base=100)
+
+        @combomethod
+        def either(receiver, x):
+            return receiver.base + y
+
+    a = A()
+    assert a.either(1, 3) == 4
+    assert A.either(1, 3) == 4
+
+*Voila!* You method now takes either the class or the instance--whichever
+one you want to call it with.
+
+
+
+
+
+Discussion
+==========
+
+In some cases, you can fake ``@combomethod`` with ``@classmethod``. In
+the code above, for example, there is no real reference to the class
+or instance, and ``either`` could have been designated a ``@classmethod``,
+since they can be called with either classes or instances. But, there's a
+problem: Class methods *always* pass the class to the method, even if they're
+called with an instance. With this approach, you can never access the
+instance variables. Ouch!
+
+Alternatively, ``either`` could have been designated a ``@staticmethod``,
+had its ``receiver`` variable been removed. Then it would be callable
+from either an instance or a class. But in neither case would it pass the
+object the method was called from, so there'd never be a way to access
+either the class or instance variables. Double ouch!
+
+So as useful as ``@classmethod`` and ``@staticmethod`` are, they don't
+handle the important case where you need to call with either the class or
+an instance *and* you need genuine access to the object doing the call.
+Here's an example that needs this::
+
+    class Above(object):
+
+        base = 10
+
+        def __init__(self, base=100):
+            self.base = base
+
+        @combomethod
+        def above_base(receiver, x):
+            return receiver.base + x
+
+    a = Above()
+    assert a.above_base(5) == 105
+    assert Above.above_base(5) == 15
+
+    aa = Above(12)
+    assert aa.above_base(5) == 17
+    assert Above.above_base(5) == 15
+
+When you need to call with either an instance or a class, and you also care
+about the object doing the calling, ``@combomethod`` rocks and rolls.
+
+Notes
+=====
+
+* This module is primarily a convenient packaging, testing,
+  and documentation of insights and code from Mike Axiak's
+  `Stack Overflow post <http://stackoverflow.com/questions/2589690/creating-a-method-that-is-simultaneously-an-instance-and-class-method>`_.
+  Thank you, Mike!
+
+* Automated multi-version testing managed with
+  `pytest <http://pypi.python.org/pypi/pytest>`_,
+  `pytest-cov <http://pypi.python.org/pypi/pytest-cov>`_,
+  `coverage <http://pypi.python.org/pypi/coverage>`_, and
+  `tox <http://pypi.python.org/pypi/tox>`_.
+  Continuous integration testing
+  with `Travis-CI <https://travis-ci.org/jonathaneunice/combomethod>`_.
+  Packaging linting with `pyroma <https://pypi.python.org/pypi/pyroma>`_.
+
+  Successfully packaged for, and
+  tested against, all late-model versions of Python: 2.6, 2.7, 3.2, 3.3,
+  3.4, and 3.5 pre-release (3.5.0b3) as well as PyPy 2.6.0 (based on
+  2.7.9) and PyPy3 2.4.0 (based on 3.2.5).
+
+* The author, `Jonathan Eunice <mailto:jonathan.eunice@gmail.com>`_ or
+  `@jeunice on Twitter <http://twitter.com/jeunice>`_
+  welcomes your comments and suggestions.
+
+Installation
+============
+
+To install or upgrade to the latest version::
+
+    pip install -U combomethod
+
+To ``easy_install`` under a specific Python version (3.3 in this example)::
+
+    python3.3 -m easy_install --upgrade combomethod
+
+(You may need to prefix these with ``sudo`` to authorize installation. In
+environments without super-user privileges, you may want to use ``pip``'s
+``--user`` option, to install only for a single user, rather than
+system-wide.)

@@ -1,0 +1,9 @@
+include README.rst
+include pytest.ini
+include toxcov.ini
+include tox.ini
+include .coveragerc
+include .travis.yml
+include CHANGES.yml
+include combomethod.py
+recursive-include test *.py
