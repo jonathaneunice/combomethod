@@ -1,4 +1,9 @@
 -
+    verion: 1.0.5
+    date: September 14, 2015
+    notes: >
+        Updated testing to include PyPy 2.6.1 (based on Python 2.7.10)
+-
     version: 1.0.3
     date: September 14, 2015
     notes: >
