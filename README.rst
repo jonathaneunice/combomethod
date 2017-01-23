@@ -106,9 +106,6 @@ Notes
   `Stack Overflow post <http://stackoverflow.com/questions/2589690/creating-a-method-that-is-simultaneously-an-instance-and-class-method>`_.
   Thank you, Mike!
 
-* While the module is new to separate PyPI distribution, I've
-  successfuly used it in production code for several years.
-
 * Automated multi-version testing managed with
   `pytest <http://pypi.python.org/pypi/pytest>`_,
   `pytest-cov <http://pypi.python.org/pypi/pytest-cov>`_,
@@ -118,10 +115,13 @@ Notes
   with `Travis-CI <https://travis-ci.org/jonathaneunice/combomethod>`_.
   Packaging linting with `pyroma <https://pypi.python.org/pypi/pyroma>`_.
 
-* Successfully packaged for, and tested against, all late-model
-  versions of Python: 2.6, 2.7, 3.2, 3.3,
-  3.4, and 3.5 as well as PyPy 2.6.1 (based on
-  2.7.10) and PyPy3 2.4.0 (based on 3.2.5).
+* Version 2.2.6 updates testing for early 2017 Python
+  versions. Successfully packaged for, and
+  tested against, all late-model versions of Python: 2.6, 2.7, 3.3,
+  3.4, 3.5, and 3.6, as well as PyPy 5.6.0 (based on
+  2.7.12) and PyPy3 5.5.0 (based on 3.3.5).
+
+* See ``CHANGES.yml`` for the complete Change Log.
 
 * The author, `Jonathan Eunice <mailto:jonathan.eunice@gmail.com>`_ or
   `@jeunice on Twitter <http://twitter.com/jeunice>`_
