@@ -14,7 +14,7 @@ def lines(text):
 
 setup(
     name='combomethod',
-    version='1.0.8',
+    version='1.0.9',
     author='Jonathan Eunice',
     author_email='jonathan.eunice@gmail.com',
     description="Decorator indicating a method is both a class and an instance method",

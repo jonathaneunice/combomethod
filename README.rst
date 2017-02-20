@@ -1,5 +1,5 @@
 
-| |travisci| |version| |downloads| |versions| |impls| |wheel| |coverage| |br-coverage|
+| |travisci| |version| |versions| |impls| |wheel| |coverage| |br-coverage|
 
 .. |travisci| image:: https://api.travis-ci.org/jonathaneunice/combomethod.svg
     :target: http://travis-ci.org/jonathaneunice/combomethod
