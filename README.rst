@@ -8,10 +8,6 @@
     :alt: PyPI Package latest release
     :target: https://pypi.python.org/pypi/combomethod
 
-.. |downloads| image:: http://img.shields.io/pypi/dm/combomethod.svg?style=flat
-    :alt: PyPI Package monthly downloads
-    :target: https://pypi.python.org/pypi/combomethod
-
 .. |versions| image:: https://img.shields.io/pypi/pyversions/combomethod.svg
     :alt: Supported versions
     :target: https://pypi.python.org/pypi/combomethod

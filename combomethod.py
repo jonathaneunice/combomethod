@@ -10,7 +10,6 @@ import functools
 
 
 class combomethod(object):
-
     """
     A combomethod is a method that can be called as either a classmethod
     or an intstance method. The "receiver" of the message is akin to
