@@ -6,32 +6,31 @@
 
 .. |version| image:: http://img.shields.io/pypi/v/combomethod.svg?style=flat
     :alt: PyPI Package latest release
-    :target: https://pypi.python.org/pypi/combomethod
+    :target: https://pypi.org/project/combomethod
 
 .. |versions| image:: https://img.shields.io/pypi/pyversions/combomethod.svg
     :alt: Supported versions
-    :target: https://pypi.python.org/pypi/combomethod
+    :target: https://pypi.org/project/combomethod
 
 .. |impls| image:: https://img.shields.io/pypi/implementation/combomethod.svg
     :alt: Supported implementations
-    :target: https://pypi.python.org/pypi/combomethod
+    :target: https://pypi.org/project/combomethod
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/combomethod.svg
     :alt: Wheel packaging support
-    :target: https://pypi.python.org/pypi/combomethod
+    :target: https://pypi.org/project/combomethod
 
 .. |coverage| image:: https://img.shields.io/badge/test_coverage-100%25-6600CC.svg
     :alt: Test line coverage
-    :target: https://pypi.python.org/pypi/combomethod
+    :target: https://pypi.org/project/combomethod
 
 .. |br-coverage| image:: https://img.shields.io/badge/branch_coverage-100%25-6600CC.svg
     :alt: Test branch coverage
-    :target: https://pypi.python.org/pypi/combomethod
+    :target: https://pypi.org/project/combomethod
 
-Python has instance methods, class methods (``@classmethod``), and
-static methods (``@staticmethod``). But it doesn't have a clear way
-to invoke a method on either a class *or*
-its instances. With ``combomethod``, it does.
+Python has instance methods, class methods (``@classmethod``), and static
+methods (``@staticmethod``). But it doesn't have a clear way to invoke a method
+on either a class *or* its instances. With ``combomethod``, it does.
 
 ::
 
@@ -67,10 +66,10 @@ callable from either an instance or a class, in neither case would it pass
 the object the method was called from. There'd never be a way to access
 either the class or instance variables. Ouch again!
 
-As useful as ``@classmethod`` and ``@staticmethod`` are, they don't
-handle the important case where you need to call with either the class or
-an instance *and* you need genuine access to the object doing the call.
-Here's an example that needs this::
+As useful as ``@classmethod`` and ``@staticmethod`` are, they don't handle the
+(occasionally important) corner case where you need to call with either the
+class or an instance *and* you need genuine access to the object doing the
+call. Here's an example that needs this::
 
     class Above(object):
 
@@ -111,9 +110,9 @@ Notes
   with `Travis-CI <https://travis-ci.org/jonathaneunice/combomethod>`_.
   Packaging linting with `pyroma <https://pypi.python.org/pypi/pyroma>`_.
 
-* Successfully packaged for, and
-  tested against, all late-model versions of Python: 2.6, 2.7, 3.3,
-  3.4, 3.5, and 3.6, as well as the latest PyPy and PyPy3 builds.
+* Successfully packaged for, and tested against, all late-model versions of
+  Python: 2.6, 2.7, 3.3, 3.4, 3.5, 3.6, and 3.7 pre-release as well as the latest
+  PyPy and PyPy3 builds.
 
 * See ``CHANGES.yml`` for the complete Change Log.
 
@@ -130,6 +129,9 @@ To install or upgrade to the latest version::
 
 You may need to prefix these with ``sudo`` to authorize installation. In
 environments without super-user privileges, you may want to use ``pip``'s
-``--user`` option, to install only for a single user, rather than
-system-wide. You may also need Python-version-sepecific ``pip2`` or ``pip3``
-installers, depending on your system configuration.
+``--user`` option, to install only for a single user, rather than system-wide.
+You may also need Python-version-sepecific ``pip2`` or ``pip3`` installers,
+depending on your system configuration. In cases where ``pip`` isn't
+well-configured for a specific Python instance you need, a useful fallback::
+
+    python3.6 -m pip install -U combomethod

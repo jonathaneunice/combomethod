@@ -1,10 +1,16 @@
 -
+    version: 1.0.11
+    date: June 2, 2018
+    notes: >
+        Updates testing. Newly qualified under 2.7.15 and 3.7 pre-release.
+
+        tox direct testing versions trimmed in favor of Travis CI.
+
+-
     version: 1.0.10
     date: May 31, 2017
     notes: >
-        Updates testing. Newly qualified under 2.7.13 and 3.6,
-        as well as most recent builds of pypy and pypy3. Python 3.2
-        dropped from support.
+        Updates testing.
 
 -
     version: 1.0.6
@@ -13,7 +19,7 @@
         Updates testing. Newly qualified under 2.7.13 and 3.6,
         as well as most recent builds of pypy and pypy3. Python 3.2
         dropped from support.
-        
+
 -
     version: 1.0.5
     date: September 14, 2015
@@ -31,8 +37,8 @@
     notes: >
         Split off from ``options`` module, where it has long been used
         in production code.
-        
+
         First version as a separate package.
-        
+
         Added docs, bespoke testing, and packaging.
 

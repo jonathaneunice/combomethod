@@ -14,7 +14,7 @@ def lines(text):
 
 setup(
     name='combomethod',
-    version='1.0.10',
+    version='1.0.11',
     author='Jonathan Eunice',
     author_email='jonathan.eunice@gmail.com',
     description="Decorator indicating a method is both a class and an instance method",
@@ -42,6 +42,7 @@ setup(
         Programming Language :: Python :: 3.4
         Programming Language :: Python :: 3.5
         Programming Language :: Python :: 3.6
+        Programming Language :: Python :: 3.7
         Programming Language :: Python :: Implementation :: CPython
         Programming Language :: Python :: Implementation :: PyPy
         Topic :: Software Development :: Libraries :: Python Modules
