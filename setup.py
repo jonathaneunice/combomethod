@@ -7,14 +7,14 @@ from codecs import open
 def lines(text):
     """
     Returns each non-blank line in text enclosed in a list.
-    See http://pypi.python.org/pypi/textdata for more sophisticated version.
+    See https://pypi.org/project/textdata for more sophisticated version.
     """
     return [l.strip() for l in text.strip().splitlines() if l.strip()]
 
 
 setup(
     name='combomethod',
-    version='1.0.11',
+    version='1.0.12',
     author='Jonathan Eunice',
     author_email='jonathan.eunice@gmail.com',
     description="Decorator indicating a method is both a class and an instance method",
